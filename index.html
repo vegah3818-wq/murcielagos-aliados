@@ -8,18 +8,17 @@
   <title>Murciélagos, aliados poco reconocidos</title>
 
   <meta name="description"
-        content="Conoce a los murciélagos nectarívoros de México, su papel en la polinización y la importancia de conservarlos.">
+        content="Conoce a los murciélagos nectarívoros de México, su importancia ecológica y su relación con las plantas.">
 
   <style>
     :root {
       --fondo: #f4f7f2;
-      --blanco: #ffffff;
-      --texto: #29372f;
+      --superficie: #ffffff;
+      --texto: #26352d;
       --verde: #244d3b;
-      --verde-oscuro: #183b2c;
-      --verde-claro: #e7efe7;
+      --verde-claro: #e4eee5;
+      --acento: #d6a75d;
       --borde: #dce5dc;
-      --dorado: #d6a75d;
     }
 
     * {
@@ -33,21 +32,25 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      color: var(--texto);
       background: var(--fondo);
+      color: var(--texto);
       line-height: 1.7;
     }
 
     header {
-      padding: 76px 20px;
+      padding: 70px 20px;
       text-align: center;
       color: white;
-      background: var(--verde-oscuro);
+      background:
+        linear-gradient(
+          rgba(20, 49, 36, 0.88),
+          rgba(20, 49, 36, 0.94)
+        );
     }
 
     header h1 {
       max-width: 900px;
-      margin: 0 auto 16px;
+      margin: 0 auto 15px;
       font-size: clamp(2rem, 5vw, 3.4rem);
       line-height: 1.2;
     }
@@ -67,97 +70,61 @@
       flex-wrap: wrap;
       gap: 10px 24px;
       padding: 14px;
-      background: var(--verde-oscuro);
-      border-top: 1px solid rgba(255,255,255,0.12);
+      background: #183b2c;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      font-size: 0.94rem;
+      font-size: 0.95rem;
     }
 
     nav a:hover {
-      color: var(--dorado);
+      color: #f2cf91;
     }
 
     main {
-      width: min(1120px, 92%);
-      margin: 34px auto;
+      width: min(1100px, 92%);
+      margin: 35px auto;
     }
 
     section {
-      margin-bottom: 32px;
+      margin-bottom: 35px;
       padding: clamp(20px, 4vw, 36px);
-      background: var(--blanco);
+      background: var(--superficie);
       border: 1px solid var(--borde);
-      border-radius: 15px;
-      box-shadow: 0 5px 18px rgba(24, 59, 44, 0.045);
+      border-radius: 16px;
+      box-shadow: 0 5px 18px rgba(24, 59, 44, 0.05);
     }
 
     h2 {
-      margin: 0 0 18px;
+      margin-top: 0;
       color: var(--verde);
-      font-size: clamp(1.65rem, 3vw, 2.25rem);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
       line-height: 1.3;
     }
 
     h3 {
-      margin: 0 0 5px;
+      margin-bottom: 8px;
       color: var(--verde);
-      font-size: clamp(1.3rem, 2.5vw, 1.65rem);
-      line-height: 1.35;
-    }
-
-    h4 {
-      margin: 22px 0 6px;
-      color: var(--verde);
-      font-size: 1.08rem;
+      font-size: 1.35rem;
     }
 
     p {
-      margin: 12px 0;
-    }
-
-    a {
-      color: #205c43;
-      text-underline-offset: 3px;
-    }
-
-    a:hover {
-      color: #95621f;
+      margin-top: 10px;
     }
 
     .introduccion {
       font-size: 1.08rem;
     }
 
-    .etiqueta {
-      display: inline-block;
-      margin-bottom: 10px;
-      color: #687b6d;
-      font-size: 0.78rem;
-      font-weight: bold;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-    }
-
     .especie {
-      padding-top: 26px;
-      margin-top: 30px;
-      border-top: 1px solid var(--borde);
       scroll-margin-top: 80px;
     }
 
-    .especie:first-of-type {
-      margin-top: 0;
-      padding-top: 0;
-      border-top: none;
-    }
-
     .nombre-cientifico {
-      margin: 2px 0 15px;
-      color: #64766a;
+      margin-top: -5px;
+      color: #61766a;
       font-size: 1rem;
     }
 
@@ -177,7 +144,7 @@
     figure img {
       display: block;
       width: 100%;
-      height: 300px;
+      height: 320px;
       object-fit: contain;
       background: #f0f2ee;
       border: 1px solid var(--borde);
@@ -185,43 +152,31 @@
     }
 
     figcaption {
-      padding-top: 10px;
+      padding-top: 9px;
+      font-size: 0.9rem;
+      line-height: 1.5;
       color: #53655a;
-      font-size: 0.88rem;
-      line-height: 1.55;
-      overflow-wrap: anywhere;
     }
 
-    .dato-curioso {
-      margin: 20px 0;
-      padding: 16px 19px;
+    figcaption a,
+    .fuentes a,
+    .enlace {
+      color: #205c43;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    figcaption a:hover,
+    .fuentes a:hover,
+    .enlace:hover {
+      color: #9a6421;
+    }
+
+    .nota {
+      padding: 15px 18px;
       background: var(--verde-claro);
-      border-left: 4px solid var(--dorado);
-      border-radius: 6px;
-    }
-
-    .dato-curioso strong {
-      color: var(--verde);
-    }
-
-    .conservacion {
-      margin-top: 22px;
-      padding: 18px 20px;
-      background: #f7f8f5;
-      border: 1px solid var(--borde);
-      border-radius: 9px;
-    }
-
-    .conservacion h4 {
-      margin-top: 0;
-    }
-
-    .estado {
-      margin: 8px 0;
-    }
-
-    .estado strong {
-      color: var(--verde);
+      border-left: 4px solid var(--verde);
+      border-radius: 5px;
     }
 
     .lista {
@@ -229,21 +184,11 @@
     }
 
     .lista li {
-      margin-bottom: 8px;
-    }
-
-    .nota {
-      padding: 16px 18px;
-      background: var(--verde-claro);
-      border-radius: 7px;
-    }
-
-    .conclusion {
-      background: #edf3eb;
+      margin-bottom: 10px;
     }
 
     .fuentes li {
-      margin-bottom: 15px;
+      margin-bottom: 16px;
       overflow-wrap: anywhere;
     }
 
@@ -256,13 +201,13 @@
       padding: 28px 18px;
       text-align: center;
       color: #edf4ee;
-      background: var(--verde-oscuro);
+      background: #183b2c;
       font-size: 0.9rem;
     }
 
     footer p {
-      max-width: 800px;
       margin: 5px auto;
+      max-width: 800px;
     }
 
     @media (max-width: 700px) {
@@ -274,19 +219,18 @@
         gap: 9px 16px;
       }
 
-      main {
-        width: 94%;
-        margin-top: 20px;
-      }
-
       .media-pair {
         grid-template-columns: 1fr;
       }
 
       figure img {
         height: auto;
-        min-height: 220px;
         max-height: 380px;
+      }
+
+      main {
+        width: 94%;
+        margin-top: 20px;
       }
     }
   </style>
@@ -297,136 +241,68 @@
   <header>
     <h1>Murciélagos, aliados poco reconocidos</h1>
     <p>
-      Pequeños visitantes nocturnos que ayudan a mantener
-      la relación entre las plantas, la naturaleza y las personas.
+      Conoce a algunos de los murciélagos que ayudan a mantener
+      el equilibrio de los ecosistemas y la reproducción de las plantas.
     </p>
   </header>
 
   <nav aria-label="Navegación principal">
-    <a href="#inicio">Inicio</a>
-    <a href="#aliados">¿Por qué son aliados?</a>
-    <a href="#especies">Las especies</a>
-    <a href="#conservacion-general">Conservación</a>
-    <a href="#conclusion">¿Quiénes se benefician?</a>
-    <a href="#fuentes">Fuentes</a>
+    <a href="#importancia">Su importancia</a>
+    <a href="#especies">Especies</a>
+    <a href="#conservacion">Conservación</a>
+    <a href="#fuentes">Fuentes científicas</a>
   </nav>
 
   <main>
 
-    <!-- 1. INTRODUCCIÓN -->
-
-    <section id="inicio">
-      <span class="etiqueta">Conozcamos a nuestros vecinos nocturnos</span>
-
-      <h2>Mucho más que animales de la noche</h2>
+    <section id="importancia">
+      <h2>¿Por qué son importantes los murciélagos?</h2>
 
       <p class="introduccion">
-        Cuando pensamos en murciélagos, es común imaginarlos en cuevas
-        o volando de noche. Sin embargo, no todos comen lo mismo ni
-        cumplen la misma función en la naturaleza. Algunas especies
-        se alimentan de insectos, otras de frutos y otras visitan
-        las flores en busca de néctar y polen.
+        Los murciélagos son mamíferos que desempeñan funciones
+        importantes en la naturaleza. Aunque muchas personas sienten
+        temor hacia ellos, numerosas especies contribuyen al
+        funcionamiento de los ecosistemas.
       </p>
 
       <p>
-        En México habitan murciélagos que dependen de las flores
-        para alimentarse. Mientras recorren el paisaje durante la noche,
-        pueden llevar polen de una planta a otra. Aunque pocas veces
-        los vemos trabajando, su actividad forma parte de procesos
-        naturales que también benefician a las personas.
+        Algunos murciélagos se alimentan del néctar y del polen de
+        las flores. Mientras buscan alimento, pueden transportar
+        polen de una flor a otra y favorecer la reproducción de
+        distintas plantas. Este proceso se conoce como polinización.
       </p>
 
       <p>
-        En esta página conoceremos cuatro especies relacionadas con
-        la alimentación floral y aprenderemos qué hacen, qué amenazas
-        enfrentan y por qué vale la pena protegerlas.
-      </p>
-    </section>
-
-
-    <!-- 2. ¿POR QUÉ SON ALIADOS? -->
-
-    <section id="aliados">
-      <span class="etiqueta">Su papel en la naturaleza</span>
-
-      <h2>¿Por qué llamarlos aliados?</h2>
-
-      <p>
-        Las flores no solo atraen a mariposas y abejas. Algunas abren
-        por la noche y producen néctar para atraer visitantes nocturnos,
-        entre ellos ciertos murciélagos. Al acercarse para alimentarse,
-        el polen puede quedar pegado a su cara y pelaje.
+        En México, los murciélagos nectarívoros tienen una relación
+        importante con plantas como los agaves y algunos cactus.
+        La relación exacta depende de la especie de murciélago,
+        de la planta y de las condiciones de cada región.
       </p>
 
       <p>
-        Cuando después visitan otra flor compatible, parte de ese polen
-        puede llegar hasta ella y hacer posible la reproducción de la
-        planta. A este proceso se le llama <strong>polinización</strong>.
-        No todas las visitas producen polinización, pero los murciélagos
-        pueden ser visitantes importantes de determinadas plantas.
-      </p>
-
-      <p>
-        Entre las plantas relacionadas con estos murciélagos se encuentran
-        varios agaves y cactus columnares. La relación depende de la
-        especie, de la región y de las flores disponibles en cada época
-        del año.
-      </p>
-
-      <p>
-        Por eso se les considera aliados: al buscar su alimento,
-        contribuyen a procesos ecológicos que ayudan a mantener
-        la vegetación y las relaciones entre las especies.
+        En esta página conocerás cuatro especies y podrás consultar
+        sus fotografías y mapas de distribución.
       </p>
 
       <p class="nota">
-        <strong>Para tener en cuenta:</strong> no todos los murciélagos
-        polinizan plantas y no todas las plantas dependen de ellos.
-        En esta página nos enfocamos en especies que consumen recursos
-        florales y pueden participar en la polinización.
+        <strong>Un dato importante:</strong> los mapas de distribución
+        potencial muestran regiones donde las condiciones pueden ser
+        adecuadas para una especie. No significan necesariamente que
+        se haya confirmado su presencia en todos los puntos del mapa.
       </p>
     </section>
 
 
-    <!-- 3. FICHAS DE ESPECIES -->
-
     <section id="especies">
-      <span class="etiqueta">Cuatro especies, un papel importante</span>
-
-      <h2>Conoce a los murciélagos</h2>
+      <h2>Conoce a estos murciélagos</h2>
 
       <!-- ESPECIE 1 -->
 
       <article class="especie" id="yerbabuenae">
-
         <h3>Murciélago magueyero menor</h3>
 
         <p class="nombre-cientifico">
           <em>Leptonycteris yerbabuenae</em>
-        </p>
-
-        <p>
-          Es un murciélago de hocico alargado, adaptado para acercarse
-          a las flores y obtener néctar. Durante la noche puede recorrer
-          distintas zonas en busca de alimento, siguiendo la disponibilidad
-          de las plantas que florecen en su entorno.
-        </p>
-
-        <div class="dato-curioso">
-          <strong>¿Sabías que...?</strong>
-          sus desplazamientos pueden conectar zonas donde crecen
-          distintas plantas. Así, un animal que sale a buscar alimento
-          puede transportar polen entre flores separadas por cierta
-          distancia.
-        </div>
-
-        <h4>¿De qué se alimenta?</h4>
-
-        <p>
-          Consume principalmente néctar y polen. Al introducir el hocico
-          en una flor, puede rozar sus estructuras reproductivas y llevarse
-          polen adherido al cuerpo. Cuando visita otras flores, parte de
-          ese polen puede transferirse.
         </p>
 
         <div class="media-pair">
@@ -434,7 +310,7 @@
           <figure>
             <img
               src="imagenes/Leptonycteris_yerbabuenae.jpg"
-              alt="Murciélago magueyero menor, Leptonycteris yerbabuenae"
+              alt="Fotografía del murciélago magueyero menor"
               loading="lazy">
           </figure>
 
@@ -445,92 +321,43 @@
               loading="lazy">
 
             <figcaption>
-              <strong>Mapa de distribución potencial.</strong><br>
-              <strong>Autor y año:</strong> Sánchez-Cordero et al. (2020).<br>
-              <strong>Fuente:</strong>
+              <strong>Distribución potencial.</strong>
+              Fuente cartográfica: Sánchez-Cordero et al. (2020).
               <a
                 href="https://enciclovida.mx/especies/36775-leptonycteris-yerbabuenae"
                 target="_blank"
                 rel="noopener noreferrer">
-                CONABIO, EncicloVida
-              </a>.<br>
-              <a
-                href="https://enciclovida.mx/especies/36775-leptonycteris-yerbabuenae"
-                target="_blank"
-                rel="noopener noreferrer">
-                Consultar ficha y mapa ↗
+                Consultar ficha y mapa en CONABIO, EncicloVida ↗
               </a>
             </figcaption>
           </figure>
 
         </div>
 
-        <div class="conservacion">
-          <h4>Conservación: ¿qué amenazas enfrenta?</h4>
+        <p>
+          El murciélago magueyero menor es una especie nectarívora:
+          obtiene alimento principalmente del néctar y del polen
+          de las flores. Al visitar distintas plantas para alimentarse,
+          puede contribuir a la polinización.
+        </p>
 
-          <p>
-            La pérdida de vegetación con flores, la alteración de sus
-            refugios y la reducción de alimento disponible pueden afectar
-            a sus poblaciones. En especies que realizan desplazamientos
-            estacionales, también es importante conservar las zonas de
-            alimentación a lo largo de sus rutas.
-          </p>
-
-          <p class="estado">
-            <strong>NOM-059-SEMARNAT-2010:</strong>
-            la interpretación de su categoría requiere revisar la
-            nomenclatura con la que aparece en la lista oficial.
-          </p>
-
-          <p class="estado">
-            <strong>UICN:</strong>
-            consulta la evaluación vigente de la especie antes de
-            asignarle una categoría definitiva en esta página.
-          </p>
-
-          <p>
-            <strong>¿Cómo ayudar?</strong> Conservar agaves y otras
-            plantas nativas, evitar la destrucción de refugios y reducir
-            los daños a la vegetación son medidas útiles para proteger
-            su alimento y sus sitios de descanso.
-          </p>
-        </div>
-
+        <p>
+          Su relación con plantas que florecen durante la noche hace
+          que sea un participante importante en los ecosistemas
+          donde coinciden ambos organismos. Su presencia y abundancia
+          pueden variar según la disponibilidad de alimento y las
+          condiciones ambientales.
+        </p>
       </article>
 
 
       <!-- ESPECIE 2 -->
 
       <article class="especie" id="nivalis">
-
         <h3>Murciélago magueyero mayor</h3>
 
         <p class="nombre-cientifico">
           <em>Leptonycteris nivalis</em>
-        </p>
-
-        <p>
-          Es un murciélago nectarívoro de hocico largo que visita flores
-          para alimentarse. Se relaciona con ambientes donde encuentra
-          agaves y otras plantas con flores, además de sitios adecuados
-          para refugiarse durante el día.
-        </p>
-
-        <div class="dato-curioso">
-          <strong>¿Sabías que...?</strong>
-          su relación con los agaves no se limita a una sola planta
-          o a un solo sitio. La disponibilidad de flores cambia durante
-          el año, por lo que conservar distintas áreas de vegetación
-          puede ser importante para su alimentación.
-        </div>
-
-        <h4>¿De qué se alimenta?</h4>
-
-        <p>
-          Obtiene buena parte de su energía del néctar y también consume
-          polen. Al visitar las flores, puede transportar polen adherido
-          al rostro y al pelaje, por lo que participa en la reproducción
-          de algunas plantas.
         </p>
 
         <div class="media-pair">
@@ -538,7 +365,7 @@
           <figure>
             <img
               src="imagenes/L. nivalis.jpg"
-              alt="Murciélago magueyero mayor, Leptonycteris nivalis"
+              alt="Fotografía del murciélago magueyero mayor"
               loading="lazy">
           </figure>
 
@@ -549,90 +376,43 @@
               loading="lazy">
 
             <figcaption>
-              <strong>Mapa de distribución potencial.</strong><br>
-              <strong>Autor y año:</strong> Ballesteros-Barrera et al. (2016).<br>
-              <strong>Fuente:</strong>
+              <strong>Distribución potencial.</strong>
+              Fuente cartográfica: Ballesteros-Barrera et al. (2016).
               <a
                 href="https://enciclovida.mx/especies/34425-leptonycteris-nivalis"
                 target="_blank"
                 rel="noopener noreferrer">
-                CONABIO, EncicloVida
-              </a>.<br>
-              <a
-                href="https://enciclovida.mx/especies/34425-leptonycteris-nivalis"
-                target="_blank"
-                rel="noopener noreferrer">
-                Consultar ficha y mapa ↗
+                Consultar ficha y mapa en CONABIO, EncicloVida ↗
               </a>
             </figcaption>
           </figure>
 
         </div>
 
-        <div class="conservacion">
-          <h4>Conservación: ¿qué amenazas enfrenta?</h4>
+        <p>
+          El murciélago magueyero mayor es otro murciélago nectarívoro
+          relacionado con las flores de agaves y otras plantas.
+          Su alimentación le permite obtener energía del néctar,
+          mientras que el polen puede quedar adherido a su cuerpo
+          durante las visitas a las flores.
+        </p>
 
-          <p>
-            La pérdida de plantas que producen néctar, los cambios en
-            el uso del suelo y las molestias en cuevas y minas pueden
-            perjudicar a esta especie. La conservación de sus refugios
-            y de las áreas donde encuentra alimento es especialmente
-            importante.
-          </p>
-
-          <p class="estado">
-            <strong>NOM-059-SEMARNAT-2010:</strong>
-            Amenazada (A).
-          </p>
-
-          <p class="estado">
-            <strong>UICN:</strong>
-            En Peligro (EN), según la evaluación publicada en 2016.
-            Conviene consultar la ficha oficial por si existe una
-            evaluación posterior.
-          </p>
-
-          <p>
-            <strong>¿Cómo ayudar?</strong> Evitar perturbar las colonias,
-            conservar la vegetación nativa y no cerrar ni modificar
-            refugios sin la intervención de especialistas.
-          </p>
-        </div>
-
+        <p>
+          Al desplazarse entre plantas, puede transportar polen
+          y contribuir a su reproducción. La conservación de los
+          sitios donde encuentra alimento y refugio ayuda a mantener
+          las condiciones necesarias para su supervivencia.
+        </p>
       </article>
 
 
       <!-- ESPECIE 3 -->
 
       <article class="especie" id="mexicana">
-
         <h3>Murciélago trompudo mexicano</h3>
 
         <p class="nombre-cientifico">
           <em>Choeronycteris mexicana</em>
-        </p>
-
-        <p>
-          Como su nombre común lo indica, tiene un hocico alargado que
-          le ayuda a alcanzar el alimento dentro de las flores. Es un
-          murciélago que puede encontrarse en regiones donde hay
-          vegetación con flores y refugios apropiados.
-        </p>
-
-        <div class="dato-curioso">
-          <strong>¿Sabías que...?</strong>
-          su hocico y su lengua son herramientas para llegar al néctar
-          de las flores. Mientras se alimenta, puede entrar en contacto
-          con el polen y transportarlo al visitar otras plantas.
-        </div>
-
-        <h4>¿De qué se alimenta?</h4>
-
-        <p>
-          Consume néctar y polen de diversas flores, entre ellas las de
-          algunos agaves y cactus. También puede aprovechar otros recursos,
-          como pequeños frutos o insectos, según las condiciones y la
-          disponibilidad de alimento.
         </p>
 
         <div class="media-pair">
@@ -640,7 +420,7 @@
           <figure>
             <img
               src="imagenes/Choeronycteris mexicana.jpg"
-              alt="Murciélago trompudo mexicano, Choeronycteris mexicana"
+              alt="Fotografía de Choeronycteris mexicana"
               loading="lazy">
           </figure>
 
@@ -651,91 +431,44 @@
               loading="lazy">
 
             <figcaption>
-              <strong>Mapa de distribución potencial.</strong><br>
-              <strong>Autor y año:</strong>
-              Ceballos, G., S. Blanco y E. Martínez (2006).<br>
-              <strong>Fuente:</strong>
+              <strong>Distribución potencial.</strong>
+              Fuente cartográfica: Ceballos, G., S. Blanco y E. Martínez
+              (2006).
               <a
                 href="https://enciclovida.mx/especies/34299-choeronycteris-mexicana"
                 target="_blank"
                 rel="noopener noreferrer">
-                CONABIO, EncicloVida
-              </a>.<br>
-              <a
-                href="https://enciclovida.mx/especies/34299-choeronycteris-mexicana"
-                target="_blank"
-                rel="noopener noreferrer">
-                Consultar ficha y mapa ↗
+                Consultar ficha y mapa en CONABIO, EncicloVida ↗
               </a>
             </figcaption>
           </figure>
 
         </div>
 
-        <div class="conservacion">
-          <h4>Conservación: ¿qué amenazas enfrenta?</h4>
+        <p>
+          <em>Choeronycteris mexicana</em> es un murciélago que
+          se alimenta de recursos florales, como el néctar y el polen.
+          Su hocico alargado y su lengua le ayudan a obtener alimento
+          de flores que pueden resultar difíciles de aprovechar
+          para otros animales.
+        </p>
 
-          <p>
-            La transformación de los ambientes naturales, la pérdida
-            de plantas con flores y las perturbaciones en sus refugios
-            pueden reducir las condiciones que necesita para sobrevivir.
-            También es importante evitar que el miedo o los mitos lleven
-            a destruir colonias.
-          </p>
-
-          <p class="estado">
-            <strong>NOM-059-SEMARNAT-2010:</strong>
-            Amenazada (A).
-          </p>
-
-          <p class="estado">
-            <strong>UICN:</strong>
-            Casi Amenazada (NT), según evaluaciones publicadas
-            anteriormente. Debe revisarse la ficha oficial para
-            confirmar la categoría más reciente.
-          </p>
-
-          <p>
-            <strong>¿Cómo ayudar?</strong> Mantener la vegetación nativa,
-            proteger los refugios y buscar asesoría especializada antes
-            de intervenir en cuevas o minas donde haya murciélagos.
-          </p>
-        </div>
-
+        <p>
+          Como otros murciélagos nectarívoros, puede participar
+          en la polinización de plantas. La conservación de la
+          vegetación y de los refugios que utiliza es importante
+          para mantener sus poblaciones.
+        </p>
       </article>
 
 
       <!-- ESPECIE 4 -->
 
       <article class="especie" id="glossophaga">
-
         <h3>Murciélago de lengua larga</h3>
 
         <p class="nombre-cientifico">
           <em>Glossophaga mutica</em>
-        </p>
-
-        <p>
-          Es un murciélago pequeño con una lengua adaptada para obtener
-          alimento de las flores. Puede utilizar distintos tipos de
-          refugio, incluidos huecos, cuevas y algunas estructuras
-          construidas por las personas.
-        </p>
-
-        <div class="dato-curioso">
-          <strong>¿Sabías que...?</strong>
-          no todos los murciélagos nectarívoros viven exclusivamente
-          del néctar. En esta especie, la dieta puede cambiar según
-          la estación: también puede consumir frutos e insectos.
-        </div>
-
-        <h4>¿De qué se alimenta?</h4>
-
-        <p>
-          Su dieta es variada. Puede incluir néctar y polen, además de
-          frutos e insectos. Esta flexibilidad le permite aprovechar
-          distintos recursos según la época del año y lo que encuentra
-          en su ambiente.
         </p>
 
         <div class="media-pair">
@@ -743,7 +476,7 @@
           <figure>
             <img
               src="imagenes/Glossophaga mutica.jpeg"
-              alt="Murciélago Glossophaga mutica"
+              alt="Fotografía de Glossophaga mutica"
               loading="lazy">
           </figure>
 
@@ -754,222 +487,145 @@
               loading="lazy">
 
             <figcaption>
-              <strong>Mapa de distribución.</strong><br>
-              Autor y año pendientes de confirmar con la fuente
-              original del mapa.
+              Mapa de distribución de la especie.
+              Para conocer su alcance geográfico y la fecha de elaboración,
+              consulta la fuente original del mapa.
             </figcaption>
           </figure>
 
         </div>
 
-        <div class="conservacion">
-          <h4>Conservación: ¿qué amenazas enfrenta?</h4>
+        <p>
+          Los murciélagos del género <em>Glossophaga</em> incluyen
+          especies que se alimentan de néctar, polen y, en ciertas
+          ocasiones, pequeños frutos o insectos. Su lengua adaptada
+          les permite obtener alimento de las flores.
+        </p>
 
-          <p>
-            La pérdida de vegetación, la disminución de alimento y
-            la alteración de sus refugios son factores que conviene
-            considerar. Sin embargo, es importante no atribuirle
-            automáticamente todas las amenazas o categorías de otras
-            especies parecidas.
-          </p>
-
-          <p class="estado">
-            <strong>NOM-059-SEMARNAT-2010:</strong>
-            la categoría debe comprobarse en la lista oficial usando
-            el nombre científico correspondiente.
-          </p>
-
-          <p class="estado">
-            <strong>UICN:</strong>
-            <em>Glossophaga mutica</em> no cuenta con una evaluación
-            propia identificada bajo ese nombre en la fuente taxonómica
-            consultada. No debe asignársele automáticamente la categoría
-            de <em>Glossophaga soricina</em>.
-          </p>
-
-          <p>
-            <strong>¿Cómo ayudar?</strong> Conservar árboles y vegetación
-            nativa, evitar destruir posibles refugios y no manipular
-            murciélagos silvestres sin capacitación.
-          </p>
-        </div>
-
+        <p>
+          Estos hábitos pueden favorecer la polinización de las
+          plantas que visitan. Para interpretar correctamente la
+          distribución de esta especie en particular, es importante
+          consultar una fuente taxonómica y cartográfica que confirme
+          el nombre científico utilizado en el mapa.
+        </p>
       </article>
 
     </section>
 
 
-    <!-- 4. CONSERVACIÓN GENERAL -->
-
-    <section id="conservacion-general">
-      <span class="etiqueta">Pequeñas acciones, grandes beneficios</span>
-
-      <h2>¿Qué podemos hacer para protegerlos?</h2>
+    <section id="conservacion">
+      <h2>¿Cómo podemos ayudar a conservarlos?</h2>
 
       <p>
-        Cuidar a los murciélagos no significa acercarse a ellos ni
-        intentar alimentarlos. Lo más útil es conservar los lugares
-        donde encuentran comida y refugio, y evitar las molestias
-        innecesarias.
+        Los murciélagos pueden verse afectados por la pérdida de
+        vegetación, la alteración de sus refugios y otras actividades
+        humanas. Algunas acciones sencillas pueden ayudar a proteger
+        los ecosistemas de los que dependen.
       </p>
 
       <ul class="lista">
         <li>
-          <strong>Conservar los agaves y cactus nativos.</strong>
-          Sus flores pueden proporcionar alimento a murciélagos
-          nectarívoros.
+          Conservar los agaves, cactus y otras plantas nativas que
+          proporcionan alimento a los murciélagos nectarívoros.
         </li>
 
         <li>
-          <strong>Proteger cuevas y otros refugios.</strong>
-          No entrar a molestar colonias ni bloquear entradas
-          por cuenta propia.
+          Evitar destruir refugios y no molestar a los murciélagos
+          en cuevas, minas u otros sitios donde descansan.
         </li>
 
         <li>
-          <strong>Cuidar la vegetación natural.</strong>
-          La pérdida de plantas puede reducir los recursos de los
-          que dependen estos animales.
+          Evitar incendios y daños innecesarios a la vegetación
+          natural.
         </li>
 
         <li>
-          <strong>Evitar el uso irresponsable de productos químicos.</strong>
-          Su aplicación puede afectar a distintos organismos y alterar
-          el funcionamiento de los ecosistemas.
+          Compartir información confiable para reducir los mitos
+          y el miedo injustificado hacia estos animales.
         </li>
 
         <li>
-          <strong>Informarse antes de actuar.</strong>
-          Si encuentras una colonia en una vivienda o edificio,
-          solicita orientación a las autoridades ambientales
-          o a personal especializado.
-        </li>
-
-        <li>
-          <strong>Compartir información confiable.</strong>
-          Los murciélagos no son animales que deban eliminarse
-          simplemente por ser murciélagos. Cada situación debe
-          evaluarse de acuerdo con la especie y el contexto.
+          Consultar a especialistas o autoridades ambientales cuando
+          se encuentre una colonia de murciélagos que parezca estar
+          en peligro.
         </li>
       </ul>
-    </section>
 
-
-    <!-- 5. CONCLUSIÓN -->
-
-    <section id="conclusion" class="conclusion">
-      <span class="etiqueta">Una relación que también nos beneficia</span>
-
-      <h2>¿Quiénes se benefician de los murciélagos?</h2>
-
-      <p>
-        Cuando un murciélago visita una flor, no busca ayudar a las
-        personas: busca alimento. Sin embargo, esa actividad puede
-        tener efectos que van más allá de su propia supervivencia.
-        Las plantas que reciben polen pueden reproducirse y mantener
-        sus poblaciones, y de ellas dependen otros organismos que
-        forman parte de los ecosistemas.
-      </p>
-
-      <p>
-        Entre los beneficiarios se encuentran las propias plantas,
-        otros animales que utilizan sus flores, frutos o semillas,
-        y las comunidades que aprovechan los recursos vegetales.
-        La polinización es uno de los procesos que contribuyen
-        al mantenimiento de esa relación.
-      </p>
-
-      <p>
-        Los seres humanos también obtenemos beneficios. Los agaves,
-        por ejemplo, proporcionan fibras, bebidas y materias primas
-        para distintas actividades económicas. La polinización puede
-        contribuir a la reproducción de las plantas y al mantenimiento
-        de sus poblaciones naturales. No significa que todos esos
-        productos dependan exclusivamente de los murciélagos, pero
-        sí que estos pueden formar parte de la red ecológica que
-        los sostiene.
-      </p>
-
-      <p>
-        Además, los ecosistemas saludables proporcionan otros
-        beneficios, como la conservación de la biodiversidad,
-        oportunidades de investigación y actividades educativas
-        y de observación de la naturaleza.
-      </p>
-
-      <p>
-        Proteger a estos murciélagos es cuidar una relación entre
-        animales, plantas y personas que muchas veces pasa
-        desapercibida. Su trabajo ocurre durante la noche, pero
-        sus efectos pueden continuar mucho después de que termina
-        su vuelo.
+      <p class="nota">
+        Proteger a los murciélagos también significa cuidar las plantas,
+        los refugios y los ambientes naturales que necesitan para vivir.
       </p>
     </section>
 
-
-    <!-- 6. FUENTES -->
 
     <section id="fuentes">
-      <span class="etiqueta">Para seguir aprendiendo</span>
-
       <h2>Fuentes científicas y recursos</h2>
 
       <p>
-        Estas páginas permiten consultar información sobre las especies,
-        los mapas de distribución y las categorías de conservación.
-        Las referencias específicas de cada mapa se mantienen en
-        las leyendas que aparecen debajo de las imágenes.
+        Los siguientes recursos permiten consultar información sobre
+        las especies y revisar los mapas de distribución utilizados
+        en esta página.
       </p>
 
       <ol class="fuentes">
 
         <li>
-          <strong>CONABIO, EncicloVida.</strong>
+          <strong>
+            Sánchez-Cordero et al. (2020).
+          </strong>
+          Mapa de distribución potencial de
           <em>Leptonycteris yerbabuenae</em>.
           <small>
-            Ficha de la especie y mapas de distribución.
+            Ficha de la especie en CONABIO, EncicloVida.
           </small>
           <a
             href="https://enciclovida.mx/especies/36775-leptonycteris-yerbabuenae"
             target="_blank"
             rel="noopener noreferrer">
-            Consultar ficha ↗
+            Consultar recurso ↗
           </a>
         </li>
 
         <li>
-          <strong>CONABIO, EncicloVida.</strong>
+          <strong>
+            Ballesteros-Barrera et al. (2016).
+          </strong>
+          Mapa de distribución potencial de
           <em>Leptonycteris nivalis</em>.
           <small>
-            Ficha de la especie y mapas de distribución.
+            Ficha de la especie en CONABIO, EncicloVida.
           </small>
           <a
             href="https://enciclovida.mx/especies/34425-leptonycteris-nivalis"
             target="_blank"
             rel="noopener noreferrer">
-            Consultar ficha ↗
+            Consultar recurso ↗
           </a>
         </li>
 
         <li>
-          <strong>CONABIO, EncicloVida.</strong>
+          <strong>
+            Ceballos, G., S. Blanco y E. Martínez (2006).
+          </strong>
+          Mapa de distribución potencial de
           <em>Choeronycteris mexicana</em>.
           <small>
-            Ficha de la especie y mapas de distribución.
+            Atlas Mastozoológico de México, mapa disponible
+            en la ficha de CONABIO, EncicloVida.
           </small>
           <a
             href="https://enciclovida.mx/especies/34299-choeronycteris-mexicana"
             target="_blank"
             rel="noopener noreferrer">
-            Consultar ficha ↗
+            Consultar recurso ↗
           </a>
         </li>
 
         <li>
           <strong>CONABIO. Sistema Nacional de Información sobre Biodiversidad.</strong>
-          <small>
-            Cartografía y mapas de distribución de especies.
-          </small>
+          Mapas de registros de presencia y modelos de distribución
+          potencial de las especies.
           <a
             href="https://conabio.snib.mx/cartografia/"
             target="_blank"
@@ -979,74 +635,30 @@
         </li>
 
         <li>
-          <strong>SEMARNAT / PROFEPA.</strong>
-          <em>NOM-059-SEMARNAT-2010</em>.
-          <small>
-            Norma mexicana para la identificación de especies
-            silvestres en riesgo. Antes de publicar categorías
-            definitivas, comprueba la versión oficial vigente
-            y las modificaciones aplicables.
-          </small>
+          <strong>CONABIO. Biodiversidad Mexicana.</strong>
+          Información sobre los mapas de distribución de las especies.
           <a
-            href="https://www.gob.mx/profepa/es/documentos/norma-oficial-mexicana-nom-059-semarnat-2010"
+            href="https://www.biodiversidad.gob.mx/especies/distribesp.html"
             target="_blank"
             rel="noopener noreferrer">
-            Consultar la norma ↗
-          </a>
-        </li>
-
-        <li>
-          <strong>UICN. Lista Roja de Especies Amenazadas.</strong>
-          <small>
-            Evaluaciones internacionales de riesgo de extinción.
-          </small>
-          <a
-            href="https://www.iucnredlist.org/"
-            target="_blank"
-            rel="noopener noreferrer">
-            Consultar la Lista Roja ↗
-          </a>
-        </li>
-
-        <li>
-          <strong>Animal Diversity Web.</strong>
-          <em>Choeronycteris mexicana</em>.
-          <small>
-            Información general sobre alimentación, polinización
-            y ecología de la especie.
-          </small>
-          <a
-            href="https://animaldiversity.org/accounts/Choeronycteris_mexicana/"
-            target="_blank"
-            rel="noopener noreferrer">
-            Consultar información ↗
-          </a>
-        </li>
-
-        <li>
-          <strong>Mammal Diversity Database.</strong>
-          <em>Glossophaga mutica</em>.
-          <small>
-            Información taxonómica y estado de evaluación
-            de la especie.
-          </small>
-          <a
-            href="https://www.mammaldiversity.org/taxon/1006536/"
-            target="_blank"
-            rel="noopener noreferrer">
-            Consultar ficha ↗
+            Consultar explicación de la distribución potencial ↗
           </a>
         </li>
 
       </ol>
 
       <p class="nota">
-        <strong>Sobre los mapas:</strong> un mapa de distribución
-        potencial representa áreas donde una especie podría encontrar
-        condiciones adecuadas; no confirma por sí solo su presencia
-        en cada punto. Los autores y años deben corresponder al mapa
-        específico utilizado.
+        <strong>Nota sobre los mapas:</strong> la distribución potencial
+        es una estimación basada en registros y condiciones ambientales.
+        No debe interpretarse como una confirmación de presencia en
+        cada lugar representado. <a
+          href="https://conabio.snib.mx/cartografia/"
+          target="_blank"
+          rel="noopener noreferrer">
+          Más información en CONABIO ↗
+        </a>
       </p>
+
     </section>
 
   </main>
@@ -1054,8 +666,8 @@
   <footer>
     <p><strong>Murciélagos, aliados poco reconocidos</strong></p>
     <p>
-      Divulgación sobre los murciélagos, su importancia ecológica
-      y la conservación de la biodiversidad.
+      Divulgación sobre la importancia ecológica y la conservación
+      de los murciélagos.
     </p>
   </footer>
 
